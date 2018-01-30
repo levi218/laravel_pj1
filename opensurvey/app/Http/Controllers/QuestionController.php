@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Question;
 use Illuminate\Http\Request;
@@ -61,7 +62,6 @@ class QuestionController extends Controller {
 			Auth::user()->save();
 		}
 		$answer->save();
-
 		return redirect()->route('home');
 	}
 
@@ -78,16 +78,24 @@ class QuestionController extends Controller {
 		$question->uId = Auth::id();
 		$question->question = $request->question;
 		$question->possibleAnswer = json_encode($request->answers);
-
+		$question->status = 0;
 		if (Auth::check()) {
-			Auth::user()->point -= 1;
-			Auth::user()->save();
+			if(Auth::user()->point>0){
+				Auth::user()->point -= 1;
+				Auth::user()->save();
+				$question->save();
+			}else{
+				$validator = Validator::make($request->all(), []);
+				$validator->errors()->add('newQuest', 'You dont have enough point to do this');
+				return back()->withErrors($validator)->withInput();
+			}
+		}else{
+			$question->save();
 		}
 
 
-		$question->save();
 
-		return redirect()->route('home');
+		return redirect();
 	}
 	/**
 	 * Display the specified resource.

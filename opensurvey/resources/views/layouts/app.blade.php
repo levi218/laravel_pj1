@@ -176,7 +176,7 @@
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label for="question">Câu hỏi của bạn</label>
-                        <input type="text" id="question" name="question" class="form-control" placeholder="Tôi là ai?"/>
+                        <input type="text" id="question" name="question" class="form-control" placeholder="Tôi là ai?" value="{{ old('question') }}" />
                       </div>
                       <div class="clearfix">
                         <input class="btn btn-primary float-right" type="button" value="Add Answer" onclick="addAnswer()"/>
@@ -244,6 +244,12 @@
 
       $(document).ready(function() {
         /* Open */
+        @if ($errors->has('newQuest'))
+          $('body').toggleClass('hide-overlay');
+          $(".overlay #form_new_question").toggleClass("d-none",false);
+          $(".overlay >div:not(#form_new_question)").toggleClass("d-none",true);
+          window.alert("{{$errors->first('newQuest')}}");
+        @endif
         $('.closebtn').click(function(){
           $('body').toggleClass('hide-overlay');
         });
