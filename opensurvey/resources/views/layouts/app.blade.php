@@ -50,11 +50,11 @@
                       <img src="images/SIGN IN.png" />
                       @endif
                     </a>
-                    <div class="dropdown" style="width: 200%"> 
-                      <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown"> 
+                      <div class="dropdown-menu p-4" aria-labelledby="dropdownMenuButton" style="width: 300%">
                         @if(Auth::check())
                         <h5 class="text-light">Your point: {{ Auth::user()->point }}</h5>
-                        <div class="form-actions" style="width: 200px;">
+                        <div class="form-actions" style="width: 100px;">
                           <a href="{{ route('profile') }}">Personal</a>
                           <br />
                           <a href="{{ route('logout') }}"
@@ -67,33 +67,66 @@
                         {{ Auth::user()->name }}
                         @else
                         <ul class="nav nav-tabs" role="tablist">
-                          <li><a class="tab_link active" data-toggle="tab" href="#tab_signin"  role="tab" aria-selected="true">Sign In</a></li>
-                          <li><a class="tab_link" data-toggle="tab" href="#tab_signup" role="tab">Sign Up</a></li>
+                          <li><a class="tab_link active" data-toggle="tab" href="#tab_signin"  role="tab" aria-selected="true">Sign in</a></li>
+                          <li><a class="tab_link" data-toggle="tab" href="#tab_signup" role="tab">Sign up</a></li>
                         </ul>
                         <div class="tab-content">
                           <div id="tab_signin" class="tab-pane fade active show" role="tabpanel">
                             <form id='loginform' method="POST" action="{{ route('login') }}">
                               {{ csrf_field() }}
                               <div class="form-group mt-3">
-                                <label for="email">Email address</label>
-                                <input type='text' name='email' id='email' class="form-control" maxlength="50" />
+                                <label for="m-signin-email">Email</label>
+                                <input type='text' name='email' id='m-signin-email' class="form-control" maxlength="50" />
                               </div>
                               <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type='password' name='password' id='password' class="form-control" maxlength="50" />
+                                <label for="m-signin-password">Password</label>
+                                <input type='password' name='password' id='m-signin-password' class="form-control" maxlength="50" />
                               </div>
                               <div class="form-check">
-                                <input type="checkbox" id="remember" class="form-check-input" name="remember">
-                                <label class="form-check-label" for="remember">
+                                <input type="checkbox" id="m-signin-remember" class="form-check-input" name="remember">
+                                <label class="form-check-label" for="m-signin-remember">
                                   Remember me
                                 </label>
                               </div>
-                              <input type='submit' name='Submit' class="btn btn-primary" value='Login'/>
+                              <input type='submit' name='Submit' class="btn btn-primary" value='Đăng nhập'/>
                             </form>
                           </div>
                           <div id="tab_signup" class="tab-pane fade" role="tabpanel">
-                            <h3>HOME</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <form id='registerform' method="POST" action="{{ route('register') }}" role="form" data-toggle="validator">
+                              {{ csrf_field() }}
+                              <div class="form-group mt-3">
+                                <label for="m-reg-name">Name</label>
+                                <input type='text' name='name' id='m-reg-name' class="form-control" maxlength="50" data-error="This field is required" required/>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                              <div class="form-group mt-3">
+                                <label for="m-reg-email">Email</label>
+                                <input type='email' name='email' id='m-reg-email' class="form-control" maxlength="50" data-error="This field is required" required/>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                              <div class="form-group">
+                                <label for="m-reg-password">Password</label>
+                                <input type='password' name='password' id='m-reg-password' class="form-control" maxlength="50" data-error="This field is required" required/>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                              <div class="form-group">
+                                <label for="m-reg-password-confirm">Confirm password</label>
+                                <input type='password' name='m-reg-password-confirm' id='password-confirm' class="form-control" maxlength="50" data-error="This field is required" data-match="#m-reg-password" data-match-error="Password not match" required/>
+                                <div class="help-block with-errors"></div>
+                              </div>
+                              <div class="form-group">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" id="m-reg-agree" name="agree" data-error="This field is required" required>
+                                    I agreed with your terms and conditions
+                                  </label>
+                                  <div class="help-block with-errors"></div>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <input type='submit' name='Submit' class="btn btn-primary" value='Đăng kí'/>
+                              </div>
+                            </form>
                           </div>
                         </div>
                         @endif
@@ -143,7 +176,7 @@
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label for="question">Câu hỏi của bạn</label>
-                        <input type="text" id="question" name="question" class="form-control" placeholder="Tôi là ai?"/>
+                        <input type="text" id="question" name="question" class="form-control" placeholder="Tôi là ai?" value="{{ old('question') }}" />
                       </div>
                       <div class="clearfix">
                         <input class="btn btn-primary float-right" type="button" value="Add Answer" onclick="addAnswer()"/>
@@ -187,7 +220,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed --> 
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>  
     <script type='text/javascript' src="{{ asset('js/Chart.bundle.min.js') }}"></script>
     <script>
       function number_of_answer(){
@@ -210,6 +244,12 @@
 
       $(document).ready(function() {
         /* Open */
+        @if ($errors->has('newQuest'))
+          $('body').toggleClass('hide-overlay');
+          $(".overlay #form_new_question").toggleClass("d-none",false);
+          $(".overlay >div:not(#form_new_question)").toggleClass("d-none",true);
+          window.alert("{{$errors->first('newQuest')}}");
+        @endif
         $('.closebtn').click(function(){
           $('body').toggleClass('hide-overlay');
         });

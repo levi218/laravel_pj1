@@ -11,7 +11,7 @@ class UserController extends Controller
 {
 	public function index() {
 		$asked = \App\Question::where('uId',Auth::user()->id)->get();
-		$answered = DB::select("SELECT questions.id as id, question, answer FROM opensurvey.questions join opensurvey.answers on questions.id=answers.qId WHERE answers.uId=?;", [Auth::id()]);
+		$answered = DB::select("SELECT questions.id as id, question, answer FROM questions join answers on questions.id=answers.qId WHERE answers.uId=?;", [Auth::id()]);
         return view('profile', ['user' => Auth::user(),'asked'=>$asked,'answered'=>$answered]);
     }
     //

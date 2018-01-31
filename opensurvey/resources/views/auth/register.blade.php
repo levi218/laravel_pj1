@@ -42,7 +42,7 @@
             <div class='cell colspan3 offset2'>
                 <div class="input-control text full-size">
                     <label for='phone' >Phone:</label>
-                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required>
+                    <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}">
 
                     @if ($errors->has('phone'))
                     <span class="help-block">
@@ -56,7 +56,7 @@
             <div class='cell colspan3 offset2'>
                 <div class="input-control text full-size">
                     <label for='username' >Username:</label>
-                    <input id="name" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+                    <input id="name" type="text" class="form-control" name="username" value="{{ old('username') }}" autofocus>
 
                     @if ($errors->has('username'))
                     <span class="help-block">
