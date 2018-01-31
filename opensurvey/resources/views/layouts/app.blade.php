@@ -28,7 +28,7 @@
           <div class="col-12" style="background: #435878">
             <nav class="navbar navbar-expand-lg"> 
               <!-- Brand and toggle get grouped for better mobile display --> 
-              <a class="navbar-brand" href="{{ route('home') }}"> <img class="img-fluid h-100 px-3" src="img/icon.png" /> </a>
+              <a class="navbar-brand w-25" href="{{ route('home') }}"><div class="h-100 w-100" style="background-image: url('{{ asset('img/icon.png') }}'); background-size:  contain; background-repeat:  no-repeat ; background-position: center;"></div> </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,7 +40,7 @@
                 </form>
                 <ul class="navbar-nav">
 
-                  <li class="nav-item">
+                  <li class="nav-item text-center">
                     <a id="dropdownMenuButton" class="nav-link btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                       @if(Auth::check())
                       <img src="images/PERSON.png" /><br />
@@ -135,10 +135,19 @@
                     </div>
                   </li>
                   
-                  <li class="nav-item"><a class="nav-link" href="#"><img src="images/SHOP.png" /><br />
-                    <img src="images/SHOP_txt.png" /></a> </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('aboutus') }}"><img src="images/ABOUT.png" /><br />
-                      <img src="images/ABT US.png" /></a> </li>
+                  <li class="nav-item text-center">
+                    <a class="nav-link" href="#">
+                      <img src="images/SHOP.png" /><br />
+                      <img src="images/SHOP_txt.png" />
+                    </a> 
+                  </li>
+                  <li class="nav-item text-center">
+                    <a class="nav-link" href="{{ route('aboutus') }}">
+                      <img src="images/ABOUT.png" />
+                      <br />
+                      <img src="images/ABT US.png" />
+                    </a> 
+                  </li>
                     </ul>
                     <!-- /.navbar-collapse --> 
                   </div>
