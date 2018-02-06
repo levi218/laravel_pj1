@@ -2,6 +2,29 @@
 
 @section('content')
 <div class="grid">
+<div class="row">
+    <div class="col-9"> </div>
+    <div class="col-md-3 offset-md-2">  
+        <div style="position: relative;width: :200px;height:300;left:50px">
+         <div class="image-container bordered">
+                <div class="frame"><img src="images/ABOUT1.png" class="rounded mx-auto d-block" alt=""></div>
+                <h2 class="blockquote text-center " style="font-size:35px;">ABOUT US</h2>
+                <h2 class="blockquote text-center " style="font-size:10px;">____________________________</h2>
+            </div>
+            <p style="font-size:20px;">
+             Mỗi ngày bạn có bao nhiêu câu hỏi trong đầu ?. Đôi khi chúng bật ra một cách tình cờ và ngẫu hứng.Trên xe bus, trong khi ăn sáng, lúc cạo râu hay đôi khi là giữa một trận đấu của đội bóng mà bạn là fan ruột. Bạn sẽ hỏi ai đây ?</p>
+              <div class="frame"><img src="images/logo.png" class="rounded mx-auto d-block" alt=""></div> 
+         </div>
+
+         </div>
+    <div class="col-md-3 offset-md-2">.Mỗi ngày bạn có bao nhiêu câu hỏi trong đầu ?. Đôi khi chúng bật ra một cách tình cờ và ngẫu hứng.Trên xe bus, trong khi ăn sáng, lúc cạo râu hay đôi khi là giữa một trận đấu của đội bóng mà bạn là fan ruột. Bạn sẽ hỏi ai đây ?
+    </div>
+</div>
+
+
+
+
+
 
     <div class="row">
         <div class="cell padding20"></div>
@@ -16,7 +39,7 @@
     <div class="row cells7">
         <div class="cell colspan2 offset1">
             <div class="image-container bordered">
-                <div class="frame"><img src="img/1.png"></div>
+                <div class="frame"><img src="images/ABOUT.png"></div>
             </div>
         </div>
         <div class="cell colspan3">
