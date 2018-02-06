@@ -1,32 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="grid">
-<div class="row">
-    <div class="col-9"> </div>
-    <div class="col-md-3 offset-md-2">  
-        <div style="position: relative;width: :200px;height:300;left:50px">
-         <div class="image-container bordered">
-                <div class="frame"><img src="images/ABOUT1.png" class="rounded mx-auto d-block" alt=""></div>
-                <h2 class="blockquote text-center " style="font-size:35px;">ABOUT US</h2>
-                <h2 class="blockquote text-center " style="font-size:10px;">____________________________</h2>
-            </div>
-            <p style="font-size:20px;">
-             Mỗi ngày bạn có bao nhiêu câu hỏi trong đầu ?. Đôi khi chúng bật ra một cách tình cờ và ngẫu hứng.Trên xe bus, trong khi ăn sáng, lúc cạo râu hay đôi khi là giữa một trận đấu của đội bóng mà bạn là fan ruột. Bạn sẽ hỏi ai đây ?</p>
-              <div class="frame"><img src="images/logo.png" class="rounded mx-auto d-block" alt=""></div> 
-         </div>
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-1" style="background: darkcyan;">  
+            <div class="m-2 text-center">
+                <div class="w-25 mx-auto mt-5">
+                    <img src="images/ABOUT1.png" style="width: 100%; height: auto;" alt="">
+                </div>
+                <div>
+                        
+                    <h2 class="blockquote text-center " style="font-size:35px;">ABOUT US</h2>
+                    <h2 class="blockquote text-center " style="font-size:10px;">____________________________</h2>
+                </div>
+                <p style="font-size:20px;">
+                 Mỗi ngày bạn có bao nhiêu câu hỏi trong đầu ?. Đôi khi chúng bật ra một cách tình cờ và ngẫu hứng.Trên xe bus, trong khi ăn sáng, lúc cạo râu hay đôi khi là giữa một trận đấu của đội bóng mà bạn là fan ruột. Bạn sẽ hỏi ai đây ?</p>
+                  <div class="frame"><img src="images/logo.png" class="rounded mx-auto d-block" alt=""></div> 
+             </div>
 
-         </div>
-    <div class="col-md-3 offset-md-2">.Mỗi ngày bạn có bao nhiêu câu hỏi trong đầu ?. Đôi khi chúng bật ra một cách tình cờ và ngẫu hứng.Trên xe bus, trong khi ăn sáng, lúc cạo râu hay đôi khi là giữa một trận đấu của đội bóng mà bạn là fan ruột. Bạn sẽ hỏi ai đây ?
+        </div> 
+        <div class="col-5 offset-1" style="background: darkorchid">.Mỗi ngày bạn có bao nhiêu câu hỏi trong đầu ?. Đôi khi chúng bật ra một cách tình cờ và ngẫu hứng.Trên xe bus, trong khi ăn sáng, lúc cạo râu hay đôi khi là giữa một trận đấu của đội bóng mà bạn là fan ruột. Bạn sẽ hỏi ai đây ?
+        </div>
     </div>
 </div>
 
 
 
 
-
-
-    <div class="row">
+    <!--div class="row">
         <div class="cell padding20"></div>
     </div>
     <div class="row">
@@ -82,5 +83,5 @@
     <div class="row">
         <div class="cell padding20"></div>
     </div>
-</div>
+</div-->
 @endsection
