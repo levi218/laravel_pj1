@@ -32,32 +32,10 @@
     <div class="row py-4">
       <div class="col p-5">
         <p class="h3 text-uppercase font-weight-bold">CÁC CÂU HỎI HOT</p>
-        <div class="container h-100">
-          <div class="row h-50">
-            <div class="col-7 py-2 btn_show_overlay question btn-complex"  style="border-right: 3px solid #92cdcf;">
-                <div class="bg-hover-opacity" style="background: #000"></div>
-                <span class="question-id d-none">{{$hot_questions[0]->id}}</span>
-                <p class="h4 text text-uppercase font-weight-normal">{{$hot_questions[0]->question}}</p>
-            </div>
-            <div class="col py-2 btn_show_overlay question btn-complex">
-                <div class="bg-hover-opacity" style="background: #000"></div>
-                <span class="question-id d-none">{{$hot_questions[1]->id}}</span>
-                <p class="h6 text font-weight-normal">{{$hot_questions[1]->question}}</p>
-            </div>
-          </div>
-          <div class="row border border-dark" style="height: 0"></div>
-          <div class="row h-50">
-            <div class="col-7 py-2 btn_show_overlay question btn-complex" style="border-right: 3px solid #92cdcf;">
-                <div class="bg-hover-opacity" style="background: #000"></div>
-                <span class="question-id d-none">{{$hot_questions[2]->id}}</span>
-                <span class="h4 text text-uppercase font-weight-light">{{$hot_questions[2]->question}}</span>
-            </div>
-            <div class="col py-2 btn_show_overlay question btn-complex">
-                <div class="bg-hover-opacity" style="background: #000"></div>
-                <span class="question-id d-none">{{$hot_questions[3]->id}}</span>
-                <p class="h6 text font-weight-bold">{{$hot_questions[3]->question}}</p>
-            </div>
-          </div>
+        <div class="d-flex flex-column">
+            @foreach($hot_questions as $quest)
+            @include('question_display',array('quest'=>$quest))
+            @endforeach 
         </div>
       </div>
       <div class="col p-4 mt-4 mr-5 pb-5 text-white" style="background: #92cdcf">
@@ -83,21 +61,37 @@
 </div>
 <div class="container" style="background: #d1d1d2;">
     <div class="row p-2">
-        <div class="col">
+        <div class="col-7" style="border-right: 2px dashed grey;">
+
             <p class="h4 text-uppercase font-weight-bold">... có thể bạn quan tâm</p>
+            <div class="d-flex flex-column">
+                @foreach($rand_questions as $quest)
+                <!--div class="btn_show_overlay question btn-complex p-2 border border-secondary">
+                    <div class="bg-hover-opacity" style="background: #000"></div>
+                    <span class="question-id d-none">{{$quest->id}}</span>
+                    <p class="text">{{$quest->question}}</p>
+                </div-->
+                @include('question_display',array('quest'=>$quest))
+                @endforeach
+            </div>
         </div>
-    </div>
-    @foreach($rand_questions as $quest)
-    <div class="row p-2 border border-secondary">
         <div class="col">
-            <div class="btn_show_overlay question btn-complex">
-                <div class="bg-hover-opacity" style="background: #000"></div>
-                <span class="question-id d-none">{{$quest->id}}</span>
-                <p class="text">{{$quest->question}}</p>
+            
+            <p class="h4 text-uppercase font-weight-bold">Tin tức</p>
+            <div class="d-flex flex-column align-items-stretch">
+                <div class="btn_show_overlay news btn-complex p-2 border border-secondary">
+                    <div class="bg-hover-opacity" style="background: #000"></div>
+                    <span class="news-id d-none"></span>
+                    <p class="text">a</p>
+                </div>    
+                <div class="btn_show_overlay news btn-complex p-2 border border-secondary">
+                    <div class="bg-hover-opacity" style="background: #000"></div>
+                    <span class="news-id d-none"></span>
+                    <p class="text">a</p>
+                </div>   
             </div>
         </div>
     </div>
-    @endforeach
 </div>
 @endsection
 @section('script')

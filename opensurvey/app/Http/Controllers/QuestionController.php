@@ -129,9 +129,10 @@ class QuestionController extends Controller {
 
 		//$others_answers = \App\Answer::where('qId',$question->id)->get();
 
-		$others_answers = DB::select("SELECT A.id, A.answer, A.uId, A.created_at, B.username, B.name FROM answers as A left join users as B on A.uId=B.id where A.qId=?;", [$question->id]);
+		//$others_answers = DB::select("SELECT A.id, A.answer, A.uId, A.created_at, B.username, B.name FROM answers as A left join users as B on A.uId=B.id where A.qId=?;", [$question->id]);
+		$others_answers = $question->answers;
 		// change to left join to show all type of question, then impliment logic below
-		$res_array = DB::select("SELECT A.answer as answer, count(A.answer) as count  FROM answers as A where A.qId=? GROUP BY A.qId, A.answer;", [$question->id]);
+		$res_array = DB::select("SELECT A.answer as answer, count(A.answer) as count  FROM answers as A where A.question_id=? GROUP BY A.question_id, A.answer;", [$question->id]);
 
 		return view('form_question_detail', ['quest' => $question, 'others_answers' => $others_answers, 'percentage' => $res_array]);
 	}

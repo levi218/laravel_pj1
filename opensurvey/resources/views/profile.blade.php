@@ -78,7 +78,7 @@
 				                <div class="bg-hover-opacity" style="background: #000"></div>
 				                <span class="question-id d-none">{{$quest->id}}</span>
 				                <div class="clearfix text">
-					                <div style="overflow-wrap: break-word;" class="float:left w-75 pr-2 d-inline-block">{{$quest->question}}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+					                <div style="overflow-wrap: break-word;" class="float:left w-75 pr-2 d-inline-block">{{$quest->question}}</div>
 					                <div class="float-right w-25 pl-2 d-inline-block">Trả lời: {{$quest->answer}}</div>
 					            </div>
 				            </div>
