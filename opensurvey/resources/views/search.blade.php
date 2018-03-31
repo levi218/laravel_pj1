@@ -15,21 +15,22 @@
 	<div class="clearfix"></div>
 	<div class="question-list">
 		<ul>
+			@foreach($result as $item)
 			<li>
 				<div class="panel-body">
 					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 question">
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<p>{{$item->question}}</p>
 						<span class="fa fa-star checked"></span>
 						<span class="fa fa-star checked"></span>
 						<span class="fa fa-star checked"></span>
 						<span class="fa fa-star"></span>
 						<span class="fa fa-star"></span>
 						<ul id="answers">
-							<li> It was popularised in the 1960s with the release of Letraset sheets</li>
-							<li> It was popularised in the 1960s with the release of Letraset sheets</li>
-							<li> It was popularised in the 1960s with the release of Letraset sheets</li>
-							<li> It was popularised in the 1960s with the release of Letraset sheets</li>
-							<li> It was popularised in the 1960s with the release of Letraset sheets</li>
+							@foreach($item->answers as $answer)
+
+							<li>{{$answer->answer}}</li>
+							
+							@endforeach
 						</ul>
 					</div>
 					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
@@ -37,6 +38,7 @@
 					</div>
 				</div>
 			</li>
+			@endforeach
 			<li>
 				<div class="panel-body">
 					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 question">

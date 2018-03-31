@@ -6,13 +6,14 @@
         <div class="main-function">
             <img alt="image" src="./img/ocean.jpg" class="bg-image opacity-40">
             <div class="question-form">
-                    <form action="" method="" role="form">
-                        <div class="input-question">
-                            <label style="font-size: 28px">Câu hỏi hôm nay của bạn là gì?</label>
-                            <input type="text" class="form-control" id="" placeholder="Question?">
-                        </div>
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
-                    </form>
+              <form action="{{ route('questions.store')}}" method="post">
+                {{ csrf_field() }}
+                  <div class="input-question">
+                      <label style="font-size: 28px">Câu hỏi hôm nay của bạn là gì?</label>
+                      <input type="text" id="question" name="question" class="form-control" placeholder="Question?" value="{{ old('question') }}" />
+                  </div>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
+              </form>
             </div>
         </div>
     </div>
@@ -25,7 +26,7 @@
                 </div>
                 <div class="panel-body">
                     <ul id="myList">
-                        @foreach($new_questions as $quest)
+                        @foreach($hot_questions as $quest)
                         @include('question_display',array('quest'=>$quest))
                         @endforeach 
                     </ul>
@@ -99,7 +100,7 @@
                                 </div>
                             </div>
                         </div>
-                    <button type="button" class="show-more btn btn-primary"><a href="hotquestion.html">Show more</a></button>
+                    <button type="button" class="show-more btn btn-primary"><a href="{{ route('hot_questions') }}">Show more</a></button>
                 </div>
             </div>
         </div>
@@ -110,12 +111,12 @@
                 </div>
                 <div class="panel-body">
                     <ul>
-                        @foreach($hot_questions as $quest)
+                        @foreach($new_questions as $quest)
                         @include('question_display',array('quest'=>$quest))
                         @endforeach 
                     </ul>
                     <!-- TODO: add routes newquestion and hotquestion -->
-                    <button type="button" class="show-more btn btn-primary"><a href="newquestion.html">Show more</a></button>
+                    <button type="button" class="show-more btn btn-primary"><a href="{{ route('new_questions') }}">Show more</a></button>
                 </div>
             </div>
         </div>

@@ -19,39 +19,39 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="{{ route('home') }}"><img  class="d-inline-block" width="40" height="40" src="./img/icon.png"></a>
+            <a class="navbar-brand" href="{{ route('home') }}"><img  class="d-inline-block" width="40" height="40" src="{{ asset('img/icon.png') }}"></a>
         </div>
         <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 ">
             <div class="collapse navbar-collapse" id="myNavbar">
                 <form class="nav navbar-nav navbar-left" action="{{ route('search') }}">
                     <div class="form-group">
-                    <input type="text" class="form-control" style="margin: 20px auto" name="search" placeholder="Tìm câu hỏi..">
+                    <input type="text" class="form-control" style="margin: 20px auto" id='keyword' name="keyword" placeholder="Tìm câu hỏi..">
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-item">
                         <a href="{{ route('aboutus') }}">
-                            <img class="nav-icon" src="./img/ABOUT.png">
+                            <img class="nav-icon" src="{{ asset('img/ABOUT.png') }}">
                             <h6>About us</h6>
                         </a>
                     </li>
                     @if(Auth::check())
                     <li class="navbar-item">
                         <a href="{{ route('profile') }}">
-                            <img class="nav-icon" src="./img/PERSON.png">
+                            <img class="nav-icon" src="{{ asset('img/PERSON.png')}}">
                             <h6>Profile</h6>
                         </a>
                     </li>
                     <li class="navbar-item">
                         <a href="{{ route('shop') }}">
-                            <img class="nav-icon" src="./img/SHOP.png">
+                            <img class="nav-icon" src="{{ asset('img/SHOP.png')}}">
                             <h6>Shop</h6>
                         </a>
                     </li>
                     @else
                     <li class="navbar-item">
                         <a class="sign-in" role="button" onclick="document.getElementById('id01').style.display='block'">
-                            <img class="nav-icon" src="./img/SIGNIN.png">
+                            <img class="nav-icon" src="{{ asset('img/SIGNIN.png')}}">
                             <h6>Sign in</h6>
                         </a>
                     </li>

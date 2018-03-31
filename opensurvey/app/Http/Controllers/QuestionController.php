@@ -18,7 +18,20 @@ class QuestionController extends Controller {
 	public function index() {
 		//
 	}
-
+	public function hot_questions() {
+       
+        $hot_questions = \App\Question::inRandomOrder()->take(10)->get();
+        return view('hot_questions', ['hot_questions' => $hot_questions]);
+    }
+	public function new_questions() {
+        $new_questions = \App\Question::inRandomOrder()->take(10)->get();
+        return view('new_questions', ['new_questions' => $new_questions]);
+    }
+    public function search(Request $request) {
+    	$keyword = $request->keyword;
+        $result = \App\Question::with('answers')->where('question', 'like', '%'.$keyword.'%')->get();
+        return view('search', ['result' => $result]);
+    }
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -55,8 +68,8 @@ class QuestionController extends Controller {
 		$answer = new \App\Answer;
 
 		$answer->answer = $request->answer;
-		$answer->uId = Auth::id();
-		$answer->qId = $request->qId;
+		$answer->user_id = Auth::id();
+		$answer->question_id = $request->question_id;
 		if (Auth::check()) {
 			Auth::user()->point += 1;
 			Auth::user()->save();
@@ -75,11 +88,15 @@ class QuestionController extends Controller {
 		//
 		$question = new \App\Question;
 
-		$question->uId = Auth::id();
 		$question->question = $request->question;
-		$question->possibleAnswer = json_encode($request->answers);
+		if(isset($request->answers)){
+			$question->possibleAnswer = json_encode($request->answers);
+		}else{
+			$question->possibleAnswer = null;
+		}
 		$question->status = 0;
 		if (Auth::check()) {
+			$question->user_id = Auth::id();
 			if(Auth::user()->point>0){
 				Auth::user()->point -= 1;
 				Auth::user()->save();
@@ -90,12 +107,13 @@ class QuestionController extends Controller {
 				return back()->withErrors($validator)->withInput();
 			}
 		}else{
+			$question->user_id = null;
 			$question->save();
 		}
 
 
 
-		return redirect();
+		return redirect()->route('home');
 	}
 	/**
 	 * Display the specified resource.
