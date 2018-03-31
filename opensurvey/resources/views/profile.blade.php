@@ -1,7 +1,49 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container pb-5" style="background: #d1d1d2;">
+<div class="container-fluid profile-content">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="avatar">
+                <img src="./img/avatar.png" width="160" height="160">
+            </div>
+            <div class="point-profile">
+                <h3>Điểm hiện có </h3>
+                <p>{{$user->point}}<p>
+            </div>
+            <div class="extra-info">
+                <ul>
+                    <li><a>Thông tin khác</a></li>
+                    <li><a>Thông tin khác</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+           <div class="user">
+                <h2>Profile</h2>
+                <a>{{$user->name}}</a>
+           </div> 
+           <div class="panel panel-info asked">
+               <div class="panel-heading">
+                   <h3 class="panel-title">Các câu hỏi đã hỏi</h3>
+               </div>
+               <div class="panel-body">
+                   <ul>
+                   	@foreach($asked as $quest)
+				    @include('question_display',array('quest'=>$quest))
+				    @endforeach
+                        
+                    </ul>
+                    <button type="button" class="show-more btn btn-primary">Show more</button>
+                    
+               </div>
+           </div>
+        </div>
+    </div>
+    
+
+</div>
+
+<!--div class="container pb-5" style="background: #d1d1d2;">
 	<div class="row py-4">
 		<div class="col-3 offset-1 d-flex flex-column" style="z-index: 1;">
 			<div class="py-5">
@@ -89,6 +131,6 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div-->
 
 @endsection

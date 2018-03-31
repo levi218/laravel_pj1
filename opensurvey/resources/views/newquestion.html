@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./index.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="home.html"><img  class="d-inline-block" width="40" height="40" src="./img/icon.png"></a>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 ">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <form class="nav navbar-nav navbar-left">
+                    <div class="form-group">
+                    <input type="text" class="form-control" style="margin: 20px auto" name="search" placeholder="Tìm câu hỏi..">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-item">
+                        <a href="profile.html">
+                            <img class="nav-icon" src="./img/PERSON.png">
+                            <h6>Profile</h6>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="shop.html">
+                            <img class="nav-icon" src="./img/SHOP.png">
+                            <h6>Shop</h6>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="about.html">
+                            <img class="nav-icon" src="./img/ABOUT.png">
+                            <h6>About us</h6>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid hotquestion-extend">
+        <div class="row d-flex">
+            <div class="panel panel-success" style="width: 50%">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Các câu hỏi mới</h3>
+                </div>
+                <div class="panel-body">
+                    <ul id="myList">
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+
+                    </ul>
+                    <div id="overlay" onclick="off()">
+                        <div id="rating">
+                            <span class="heading">User Rating</span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <p>4.1 average based on 254 reviews.</p>
+                            <hr style="border:3px solid #f1f1f1">
+
+                            <div class="row">
+                              <div class="side">
+                                <div class="number">5 star</div>
+                              </div>
+                              <div class="middle">
+                                <div class="bar-container">
+                                  <div class="bar-5"></div>
+                                </div>
+                              </div>
+                              <div class="side right">
+                                <div class="number">150</div>
+                              </div>
+                              <div class="side">
+                                <div class="number">4 star</div>
+                              </div>
+                              <div class="middle">
+                                <div class="bar-container">
+                                  <div class="bar-4"></div>
+                                </div>
+                              </div>
+                              <div class="side right">
+                                <div class="number">63</div>
+                              </div>
+                              <div class="side">
+                                <div class="number">3 star</div>
+                              </div>
+                              <div class="middle">
+                                <div class="bar-container">
+                                  <div class="bar-3"></div>
+                                </div>
+                              </div>
+                              <div class="side right">
+                                <div class="number">15</div>
+                              </div>
+                              <div class="side">
+                                <div class="number">2 star</div>
+                              </div>
+                              <div class="middle">
+                                <div class="bar-container">
+                                  <div class="bar-2"></div>
+                                </div>
+                              </div>
+                              <div class="side right">
+                                <div class="number">6</div>
+                              </div>
+                              <div class="side">
+                                <div class="number">1 star</div>
+                              </div>
+                              <div class="middle">
+                                <div class="bar-container">
+                                  <div class="bar-1"></div>
+                                </div>
+                              </div>
+                              <div class="side right">
+                                <div class="number">20</div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

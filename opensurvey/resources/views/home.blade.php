@@ -2,6 +2,128 @@
 
 @section('content')
 
+    <div class="container-fluid">
+        <div class="main-function">
+            <img alt="image" src="./img/ocean.jpg" class="bg-image opacity-40">
+            <div class="question-form">
+                    <form action="" method="" role="form">
+                        <div class="input-question">
+                            <label style="font-size: 28px">Câu hỏi hôm nay của bạn là gì?</label>
+                            <input type="text" class="form-control" id="" placeholder="Question?">
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i></button>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bc-grey">
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 hot-question">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Các câu hỏi hot</h3>
+                </div>
+                <div class="panel-body">
+                    <ul id="myList">
+                        @foreach($new_questions as $quest)
+                        @include('question_display',array('quest'=>$quest))
+                        @endforeach 
+                    </ul>
+                        <div id="overlay" onclick="off()">
+                            <div id="rating">
+                                <span class="heading">User Rating</span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <p>4.1 average based on 254 reviews.</p>
+                                <hr style="border:3px solid #f1f1f1">
+
+                                <div class="row">
+                                  <div class="side">
+                                    <div class="number">5 star</div>
+                                  </div>
+                                  <div class="middle">
+                                    <div class="bar-container">
+                                      <div class="bar-5"></div>
+                                    </div>
+                                  </div>
+                                  <div class="side right">
+                                    <div class="number">150</div>
+                                  </div>
+                                  <div class="side">
+                                    <div class="number">4 star</div>
+                                  </div>
+                                  <div class="middle">
+                                    <div class="bar-container">
+                                      <div class="bar-4"></div>
+                                    </div>
+                                  </div>
+                                  <div class="side right">
+                                    <div class="number">63</div>
+                                  </div>
+                                  <div class="side">
+                                    <div class="number">3 star</div>
+                                  </div>
+                                  <div class="middle">
+                                    <div class="bar-container">
+                                      <div class="bar-3"></div>
+                                    </div>
+                                  </div>
+                                  <div class="side right">
+                                    <div class="number">15</div>
+                                  </div>
+                                  <div class="side">
+                                    <div class="number">2 star</div>
+                                  </div>
+                                  <div class="middle">
+                                    <div class="bar-container">
+                                      <div class="bar-2"></div>
+                                    </div>
+                                  </div>
+                                  <div class="side right">
+                                    <div class="number">6</div>
+                                  </div>
+                                  <div class="side">
+                                    <div class="number">1 star</div>
+                                  </div>
+                                  <div class="middle">
+                                    <div class="bar-container">
+                                      <div class="bar-1"></div>
+                                    </div>
+                                  </div>
+                                  <div class="side right">
+                                    <div class="number">20</div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    <button type="button" class="show-more btn btn-primary"><a href="hotquestion.html">Show more</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 new-question">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Các câu hỏi mới</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        @foreach($hot_questions as $quest)
+                        @include('question_display',array('quest'=>$quest))
+                        @endforeach 
+                    </ul>
+                    <!-- TODO: add routes newquestion and hotquestion -->
+                    <button type="button" class="show-more btn btn-primary"><a href="newquestion.html">Show more</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 advertise">
+            
+        </div>
+    </div>
+<!--
 <div>
   <div class="container" style="background: #435878">
     <div class="row align-items-center">
@@ -66,11 +188,7 @@
             <p class="h4 text-uppercase font-weight-bold">... có thể bạn quan tâm</p>
             <div class="d-flex flex-column">
                 @foreach($rand_questions as $quest)
-                <!--div class="btn_show_overlay question btn-complex p-2 border border-secondary">
-                    <div class="bg-hover-opacity" style="background: #000"></div>
-                    <span class="question-id d-none">{{$quest->id}}</span>
-                    <p class="text">{{$quest->question}}</p>
-                </div-->
+                
                 @include('question_display',array('quest'=>$quest))
                 @endforeach
             </div>
@@ -137,87 +255,5 @@
     });
 </script>
 
-
-<!--
-<script>
-
-    $form_expanded = false;
-    function addAnswer() {
-
-    $('#grid_new_question').children().last().before("<div class='row'><div class='cell'><label>Answer</label><div class='input-control text full-size'><input type='text' name='answers[]'/></div></div></div>");
-    $("#form_new_question").css({height: 'auto'});
-    }
-    ;
-    $(document).ready(function () {
-    $height = $("#form_new_question").height() - 80;
-    $("#form_new_question").css({height: '-=' + $height + 'px'});
-    $("#expand_form_new_question").css({top: '-=' + ($height - 9) + 'px'});
-    $('#expand_form_new_question').click(function () {
-    $form_expanded = !$form_expanded;
-    if ($form_expanded) {
-
-    $("#form_new_question").animate({height: '+=' + $height + 'px'}, 500);
-    $("#expand_form_new_question").animate({top: '+=' + ($height - 9) + 'px'}, 500);
-    $("#form_new_question_trigger_icon").toggleClass('mif-expand-less');
-    $("#form_new_question_trigger_icon").toggleClass('mif-expand-more');
-    } else {
-    $height = $("#form_new_question").height() - 80;
-    $("#form_new_question").animate({height: '-=' + $height + 'px'}, 500);
-    $("#expand_form_new_question").animate({top: '-=' + ($height - 9) + 'px'}, 500);
-    $("#form_new_question_trigger_icon").toggleClass('mif-expand-less');
-    $("#form_new_question_trigger_icon").toggleClass('mif-expand-more');
-    }
-    });
-    });</script>
-<div id="form_new_question" class="fixed-top" style="overflow: hidden; z-index: 22">
-    <div class="grid bg-white">
-        <div class="row">
-            <div class="cell padding20"></div>
-        </div>
-        <div class="row cells9">
-            <div class="cell colspan5 offset2">
-                <form action="{{ route('questions.store')}}" method="post">
-                    {{ csrf_field() }}
-                    <div class="grid" id="grid_new_question">
-                        <div class="row">
-                            <div class="cell">
-                                <label>Question</label>
-                                <div class="input-control text full-size">
-                                    <input type="text" name="question" placeholder="Which game do you prefer?"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row cells5">
-                            <div class="cell offset4">
-                                <input class="full-size" type="button" value="Add Answer" onclick="addAnswer()">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="cell">
-                                <label>Answer</label>
-                                <div class="input-control text full-size">
-                                    <input type="text" name='answers[]'/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row cells5">
-                            <div class="cell offset4">
-                                <input class="full-size" type="submit" value="Ask the world!">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="row" id="expand_form_new_question" style="position: relative;">
-            <a class="full-size" >
-                <div class="cell bg-red align-center fg-white">
-                    <span id="form_new_question_trigger_icon" class="mif-expand-more mif-2x"></span>
-                </div>
-            </a>
-
-        </div>
-    </div>
-</div>
 -->
 @endsection
