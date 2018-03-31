@@ -18,6 +18,9 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/aboutus', function (){return view('about');})->name('aboutus');
+Route::get('/shop', function (){return view('shop');})->name('shop');
+Route::get('/search', function (){return view('search');})->name('search');
+
 Route::get('/questions/display_detail', 'QuestionController@display_detail');
 Route::get('/profile','UserController@index')->name('profile')->middleware('auth');;
 

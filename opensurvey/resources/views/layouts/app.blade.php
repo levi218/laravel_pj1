@@ -19,31 +19,31 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="home.html"><img  class="d-inline-block" width="40" height="40" src="./img/icon.png"></a>
+            <a class="navbar-brand" href="{{ route('home') }}"><img  class="d-inline-block" width="40" height="40" src="./img/icon.png"></a>
         </div>
         <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 ">
             <div class="collapse navbar-collapse" id="myNavbar">
-                <form class="nav navbar-nav navbar-left">
+                <form class="nav navbar-nav navbar-left" action="{{ route('search') }}">
                     <div class="form-group">
                     <input type="text" class="form-control" style="margin: 20px auto" name="search" placeholder="Tìm câu hỏi..">
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-item">
-                        <a href="about.html">
+                        <a href="{{ route('aboutus') }}">
                             <img class="nav-icon" src="./img/ABOUT.png">
                             <h6>About us</h6>
                         </a>
                     </li>
                     @if(Auth::check())
                     <li class="navbar-item">
-                        <a href="profile.html">
+                        <a href="{{ route('profile') }}">
                             <img class="nav-icon" src="./img/PERSON.png">
                             <h6>Profile</h6>
                         </a>
                     </li>
                     <li class="navbar-item">
-                        <a href="shop.html">
+                        <a href="{{ route('shop') }}">
                             <img class="nav-icon" src="./img/SHOP.png">
                             <h6>Shop</h6>
                         </a>
@@ -83,7 +83,7 @@
 
 </div>
 <div id="id01" class="modal">
-      <form class="modal-content animate" action="">
+      <div class="modal-content animate">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <ul class="nav nav-tabs" role="tablist">
@@ -161,7 +161,7 @@
         </div>
     </div>
     </div>
-  </form>
+  </div>
 
 
 </div>

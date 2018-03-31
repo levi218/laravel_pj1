@@ -155,9 +155,9 @@
       <div class="col p-5">
         <p class="h3 text-uppercase font-weight-bold">CÁC CÂU HỎI HOT</p>
         <div class="d-flex flex-column">
-            @foreach($hot_questions as $quest)
-            @include('question_display',array('quest'=>$quest))
-            @endforeach 
+            foreach($hot_questions as $quest)
+            include('question_display',array('quest'=>$quest))
+            endforeach 
         </div>
       </div>
       <div class="col p-4 mt-4 mr-5 pb-5 text-white" style="background: #92cdcf">
@@ -187,10 +187,10 @@
 
             <p class="h4 text-uppercase font-weight-bold">... có thể bạn quan tâm</p>
             <div class="d-flex flex-column">
-                @foreach($rand_questions as $quest)
+                foreach($rand_questions as $quest)
                 
-                @include('question_display',array('quest'=>$quest))
-                @endforeach
+                include('question_display',array('quest'=>$quest))
+                endforeach
             </div>
         </div>
         <div class="col">
@@ -211,8 +211,8 @@
         </div>
     </div>
 </div>
-@endsection
-@section('script')
+endsection
+section('script')
 <script type="text/javascript">
     var getUrlParameter = function getUrlParameter(sParam) {
         var sPageURL = decodeURIComponent(window.location.search.substring(1)),
