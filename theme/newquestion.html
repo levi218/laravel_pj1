@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./index.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-fixed-top" role="navigation">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="home.html"><img  class="d-inline-block" width="40" height="40" src="./img/icon.png"></a>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 ">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <form class="nav navbar-nav navbar-left">
+                    <div class="form-group">
+                    <input type="text" class="form-control" style="margin: 20px auto" name="search" placeholder="Tìm câu hỏi..">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-item">
+                        <a href="profile.html">
+                            <img class="nav-icon" src="./img/PERSON.png">
+                            <h6>Profile</h6>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="shop.html">
+                            <img class="nav-icon" src="./img/SHOP.png">
+                            <h6>Shop</h6>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="about.html">
+                            <img class="nav-icon" src="./img/ABOUT.png">
+                            <h6>About us</h6>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid hotquestion-extend">
+        <div class="row d-flex">
+            <div class="panel panel-success" style="width: 50%">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Các câu hỏi mới</h3>
+                </div>
+                <div class="panel-body">
+                    <ul id="myList">
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+                        <li><a class="d-block" role="button" onclick="on()">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</a></li>
+
+                    </ul>
+                    <div id="overlay" onclick="off()">
+                            <div class="comments">
+                              <div class="panel panel-info">
+                                <span onclick="document.getElementById('overlay').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <div class="panel-heading">
+                                  <h3 class="panel-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+                                  <div class="star-rating"> 
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                  </div>
+                                </div>
+                                <div class="panel-body">
+                                  <h5>Top Answers</h5>
+                                  <ul class="answer-list">
+                                    <li>
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                      <p class="source">Answered by <a>Thành</a> on April 14th, 2018</p>
+                                    </li>
+                                    <li>
+                                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                      <p class="source">Answered by <a>Thành</a> on April 14th, 2018</p>
+                                    </li>
+                                  </ul>
+                                  <form id="answerform" >
+                                    <label>Write your answer here: </label>
+                                    <textarea id="input" class="form-control" rows="3" required="required" ></textarea>
+                                    <button type="button" class="btn btn-primary">Submit</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
