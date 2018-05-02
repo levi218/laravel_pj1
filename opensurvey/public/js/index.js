@@ -11,12 +11,16 @@ function on() {
     document.getElementById("overlay").style.display = "block";
 }
 
-function off() {
-    document.getElementById("overlay").style.display = "none";
-}
+
+// //Answer Form 
+// $( document ).ready( function() {
+//   $( "#answer" ).click( function() {
+//     $( "#answerform" ).toggle( 'slow' );
+//   });
+// });
 
 
-
+// Ask more
 function moreAsked(){
 	document.getElementById("moreAsked").style.display = "block";
 }

@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <!-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> -->
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
   <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
   <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
   <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -92,7 +93,7 @@
             </ul>
         </div>
         <div class="tab-content">
-        <div id="tab_signin" class="signin-tab tab-pane fade active">
+        <div id="tab_signin" class="signin-tab tab-pane active">
           <form id='loginform' method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
             <div class="form-group mt-3">
@@ -115,7 +116,7 @@
             <span class="psw">Forgot <a href="#">password?</a></span>
 
         </div>
-        <div id="tab_signup" class="signin-tab tab-pane fade">
+        <div id="tab_signup" class="signin-tab tab-pane">
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>

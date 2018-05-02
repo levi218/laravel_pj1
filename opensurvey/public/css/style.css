@@ -53,7 +53,7 @@ div.form-group {
 	margin-bottom: 0;
 }
 .form-group>input[type=text] {
-	width: 200%;
+	width: 100%;
 }
 /* Carousel */
 img.bg-image {
@@ -88,6 +88,8 @@ img.bg-image {
 	height: 100px;
 }
 /* Sign in */
+.tab-content {
+}
 .sign-in {
 	cursor: pointer;
 }
@@ -262,7 +264,30 @@ h3.panel-title {
 button.show-more {
 	background-color: #435878;
 }
+button > a {
+	color: #fff;
+}
 
+.comments > .panel-info,.comments > .panel-info > .panel-heading {
+	border-color: transparent;
+}
+.star-rating > .fa {
+	font-size: 14px;
+}
+.answer-list > li {
+	font-size: 25px;
+}
+
+p.source {
+	font-size: 14px;
+	margin-left: 50px;
+}
+#answerform > label {
+	font-size: 25px;
+}
+#answerform {
+	display: block;
+}
 #overlay, #hot, #moreAsked {
     position: fixed;
     display: none;
@@ -276,8 +301,10 @@ button.show-more {
     z-index: 2;
     cursor: pointer;
 }
-
-#rating {
+#overlay {
+	overflow: auto;
+}
+#rating, .comments {
 	background-color: #ffffff;
 	padding: 20px;
 	opacity: 0.8;
@@ -288,6 +315,10 @@ button.show-more {
     color: #000;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+}
+.comments {
+	margin: 5% auto 15% auto;
+	width: 50%;
 }
 #rating>p {
 	font-size: 28px;
@@ -434,6 +465,7 @@ h2 {
 .store-top {
 	text-align: center;
 	color: #435878;
+	width: 100%;
 }
 .store-title>h4 {
 	text-transform: uppercase;
@@ -448,7 +480,9 @@ h2 {
 .store-top>.store-title {
 	position: absolute;
 	top: 200px;
-	left: 38%;
+	left: 0;
+	width: 100%;
+	margin: 0 auto;
 }
 .store-center>h5 {
 	text-transform: uppercase;
@@ -588,6 +622,7 @@ div.cart-1:hover, .product3-1:hover,.product3-2:hover, .cart-6:hover{
 }
 .user>a {
 	cursor: pointer;
+	font-family: Helvetica;
 }
 .asked {
 	margin-top: 30px;
@@ -595,7 +630,6 @@ div.cart-1:hover, .product3-1:hover,.product3-2:hover, .cart-6:hover{
 .panel-info>.panel-heading {
 	background-color: #435878;
 }
-
 
 
 
