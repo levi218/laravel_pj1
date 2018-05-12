@@ -88,8 +88,8 @@
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <ul class="nav nav-tabs" role="tablist">
-                <li><a class="tab_link" data-toggle="tab" href="#tab_signin" role="tab" aria-selected="false">Sign in</a></li>
-                <li><a class="tab_link active" data-toggle="tab" href="#tab_signup" role="tab" aria-selected="true">Sign up</a></li>
+                <li class="active"><a class="tab_link" data-toggle="tab" href="#tab_signin" role="tab" aria-selected="false">Sign in</a></li>
+                <li><a class="tab_link" data-toggle="tab" href="#tab_signup" role="tab" aria-selected="true">Sign up</a></li>
             </ul>
         </div>
         <div class="tab-content">

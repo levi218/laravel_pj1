@@ -4,20 +4,12 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+} 
 
 // User Rating
 function on() {
     document.getElementById("overlay").style.display = "block";
 }
-
-
-// //Answer Form 
-// $( document ).ready( function() {
-//   $( "#answer" ).click( function() {
-//     $( "#answerform" ).toggle( 'slow' );
-//   });
-// });
 
 
 // Ask more

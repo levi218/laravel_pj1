@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="home.html">
+                    <img class="d-inline-block" width="40" height="40" src="./img/icon.png">
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <form class="nav navbar-nav navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" style="margin: 20px auto" role="search" placeholder="Tìm câu hỏi..">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-item">
+                            <a href="profile.html">
+                                <img class="nav-icon" src="./img/PERSON.png">
+                                <h6>Profile</h6>
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="shop.html">
+                                <img class="nav-icon" src="./img/SHOP.png">
+                                <h6>Shop</h6>
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a href="about.html">
+                                <img class="nav-icon" src="./img/ABOUT.png">
+                                <h6>About us</h6>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="edit-profile">
+            <h1>Cập nhật profile</h1>
+            <hr>
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <img src="./img/avatar.png" class="avatar" alt="avatar">
+                        <h6>Đăng hình đại diện</h6>
+                        <input type="file" class="form-control">
+                        <button class="btn btn-block btn-primary">Đăng</button>
+                    </div>
+                </div>
+
+                <!-- edit form column -->
+                <div class="col-md-9 personal-info">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a>
+                        <i class="fa fa-coffee"></i>
+                        <strong>Thông báo</strong>. Dùng để thông báo thông tin đến người dùng.
+                    </div>
+                    <h3>Thông tin cá nhân</h3>
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Tên:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" value="Thanh">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Họ:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" value="Doan Quang">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Email:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" value="yourname@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tên đăng nhập:</label>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" value="thanhdoan11">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Mật khẩu:</label>
+                            <div class="col-md-8">
+                                <input class="form-control" type="password" value="123456789">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nhập lại mật khẩu:</label>
+                            <div class="col-md-8">
+                                <input class="form-control" type="password" value="123456789">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                                <span></span>
+                                <button type="reset" class="btn btn-default">Hủy</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

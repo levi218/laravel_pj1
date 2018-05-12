@@ -3,6 +3,9 @@
 .container-fluid {
 	padding: 0;
 }
+a {
+	cursor: pointer;
+}
 /* Navbar */
 .navbar {
 	border-radius: 0;
@@ -53,7 +56,7 @@ div.form-group {
 	margin-bottom: 0;
 }
 .form-group>input[type=text] {
-	width: 100%;
+	width: 200%;
 }
 /* Carousel */
 img.bg-image {
@@ -88,8 +91,7 @@ img.bg-image {
 	height: 100px;
 }
 /* Sign in */
-.tab-content {
-}
+
 .sign-in {
 	cursor: pointer;
 }
@@ -260,12 +262,16 @@ div.panel-body {
 h3.panel-title {
 	text-transform: uppercase;
 	color: #ffffff;
+	cursor: context-menu;
 }
 button.show-more {
 	background-color: #435878;
 }
 button > a {
 	color: #fff;
+}
+p, h1, h2, h3, h4, h5, h6 {
+	cursor: context-menu;
 }
 
 .comments > .panel-info,.comments > .panel-info > .panel-heading {
@@ -285,9 +291,6 @@ p.source {
 #answerform > label {
 	font-size: 25px;
 }
-#answerform {
-	display: block;
-}
 #overlay, #hot, #moreAsked {
     position: fixed;
     display: none;
@@ -299,7 +302,6 @@ p.source {
     bottom: 0;
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
-    cursor: pointer;
 }
 #overlay {
 	overflow: auto;
@@ -416,17 +418,17 @@ p.source {
 }
 
 /* About us */
-.bc-blue {
+/* .bc-blue {
 	background-color: #435878;
 	width: 100%;
 	padding-top: 74px;
 	height: auto;
-}
+} */
 .content {
 	background-color: #ffffff;
-	min-height: 590px;
+	min-height: 800px;
 	margin: 0 32px;
-	padding-top: 30px;
+	padding-top: 100px;
 }
 .introduction {
 	padding: 30px;
@@ -499,6 +501,7 @@ h2 {
 	background-color: #3e606f;
 	margin-right: 10px;
 	padding: 22px 20px;
+	height: 170px;
 }
 .product1 {
 	text-align: center;
@@ -515,6 +518,7 @@ p.use {
 	padding-bottom: 21px;
 	margin-right: 10px;
 	margin-left: 45px;
+	height: 170px;
 }
 .product2 {
 	text-align: center;
@@ -527,11 +531,13 @@ p.use {
 	padding-left: 0;
 	padding-right: 0;
 	float: right;
+	height: 170px;
 }
 .cart-4 {
 	border: 2px solid #1b5f61;
 	padding-bottom: 21px;
 	margin-right: 54px;
+	height: 170px;
 }
 
 .product3-1 {
@@ -623,6 +629,7 @@ div.cart-1:hover, .product3-1:hover,.product3-2:hover, .cart-6:hover{
 .user>a {
 	cursor: pointer;
 	font-family: Helvetica;
+	font-size: 25px;
 }
 .asked {
 	margin-top: 30px;
@@ -715,4 +722,12 @@ div.cart-1:hover, .product3-1:hover,.product3-2:hover, .cart-6:hover{
 	min-height: 590px;
 	width: 100%;
 	margin-top: 74px;
+}
+
+/* Edit Profile */
+.edit-profile {
+	margin-top: 100px;
+}
+.btn-primary {
+	background-color: #435878;
 }
