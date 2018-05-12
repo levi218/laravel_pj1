@@ -731,3 +731,7 @@ div.cart-1:hover, .product3-1:hover,.product3-2:hover, .cart-6:hover{
 .btn-primary {
 	background-color: #435878;
 }
+.form-control {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
